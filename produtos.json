@@ -69,11 +69,20 @@
         "preco": 219.9,
         "estoque": 35
     },
+    "teste",
+    "teste02",
     {
-        "id": 11,
-        "nome": "Mouse wifi",
-        "categoria": "Informatica",
-        "preco": 100.0,
+        "id": 13,
+        "nome": "teste",
+        "categoria": "Redes",
+        "preco": 50,
+        "estoque": 33
+    },
+    {
+        "id": 14,
+        "nome": "algumacoisa",
+        "categoria": "redes",
+        "preco": 60,
         "estoque": 50
     }
 ]
