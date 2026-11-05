@@ -33,7 +33,7 @@ def modificar_produtos():
 
     pesquisa_categoria = int(input("Digite 1 se voce quer mudar a categoria do produto e 0 se voce nao quer mudar : "))
     for produto in produtos :
-        if pesquisa.lower() == produto["nome"].lower() :
+        if pesquisa.lower() == produto["categoria"].lower() :
             if pesquisa_categoria == 1 :
                 nova_categoria = input("Digite a nova categoria do seu produto: ")
                 produto["categoria"] = nova_categoria
@@ -42,16 +42,16 @@ def modificar_produtos():
 
     pesquisa_preco = int(input("Digite 1 se voce quer mudar o preço do produto e 0 se voce nao quer mudar : "))
     for produto in produtos :
-        if pesquisa.lower() == produto["nome"].lower() :
+        if pesquisa.lower() == produto["preco"].lower() :
             if pesquisa_preco == 1 :
                 novo_preco = int(input("Digite o novo preço do seu produto: "))
                 produto["preco"] = novo_preco
                 break
 
 
-    pesquisa_nome = int(input(("Digite 1 se voce quer mudar o estoque do produto e 0 se voce nao quer mudar : ")))
+    pesquisa_estoque = int(input(("Digite 1 se voce quer mudar o estoque do produto e 0 se voce nao quer mudar : ")))
     for produto in produtos :
-        if pesquisa.lower() == produto["nome"].lower() :
+        if pesquisa.lower() == produto["estoque"].lower() :
             if pesquisa_estoque == 1 :
                 novo_estoque = int(input("Digite o novo estoque do seu produto: "))
                 produto["estoque"] = novo_estoque
@@ -64,7 +64,7 @@ def excluir_produtos():
     produtos = (carregar_produtos())
     pesquisa = input("Digite o nome do produto que voce deseja excluir: ")
     for produto in produtos:
-        print("comparando:", pesquisa.lower(), "com", produto["nome"].lower())
+        # print("comparando:", pesquisa.lower(), "com", produto["nome"].lower())
         if pesquisa.lower() == produto["nome"].lower():
             produtos.remove(produto)
             (salvar_produtos(produtos))
