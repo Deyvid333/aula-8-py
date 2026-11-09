@@ -21,41 +21,64 @@ def modificar_produtos():
     produtos = (carregar_produtos())
     pesquisa = input("Digite o nome do produto que voce quer modificar: ")
 
-    pesquisa_nome = int(input("Digite 1 se voce quer mudar o nome do produto e 0 se voce nao quer mudar : "))
-    for produto in produtos :
-        if pesquisa.lower() == produto["nome"].lower() :
-            if pesquisa_nome == 1 :
-                novo_nome = input("Digite o novo nome do seu produto: ")
-                produto["nome"] = novo_nome
-                (salvar_produtos(produtos))
-                break
+    for produto in produtos:
+        if pesquisa == produto["nome"] is None:
+            print("Produto não encontrado")
+        else :
+            print(produto)
+            print("Digite os novos dados do produto (Deixe em branco para manter o valor atual) :")
+            novo_nome = input("Digite o novo nome do produto: ")
+            if novo_nome == "":
+                novo_nome = produto["nome"]
+
+            nova_categoria = input("Digite a nova categoria do produto: ")
+            if nova_categoria == "":
+                nova_categoria = produto["categoria"]
+
+            novo_preco = input("Digite o novo preço do produto: ")
+            if novo_preco == "":
+                novo_preco = produto["preco"]
+
+            novo_estoque = input("Digite a nova quantidade de estoque do produto: ")
+            if novo_estoque == "":
+                novo_estoque = produto["estoque"]
+            
+
+    # pesquisa_nome = int(input("Digite 1 se voce quer mudar o nome do produto e 0 se voce nao quer mudar : "))
+    # for produto in produtos :
+    #     if pesquisa.lower() == produto["nome"].lower() :
+    #         if pesquisa_nome == 1 :
+    #             novo_nome = input("Digite o novo nome do seu produto: ")
+    #             produto["nome"] = novo_nome
+    #             (salvar_produtos(produtos))
+    #             break
 
 
-    pesquisa_categoria = int(input("Digite 1 se voce quer mudar a categoria do produto e 0 se voce nao quer mudar : "))
-    for produto in produtos :
-        if pesquisa.lower() == produto["categoria"].lower() :
-            if pesquisa_categoria == 1 :
-                nova_categoria = input("Digite a nova categoria do seu produto: ")
-                produto["categoria"] = nova_categoria
-                break
+    # pesquisa_categoria = int(input("Digite 1 se voce quer mudar a categoria do produto e 0 se voce nao quer mudar : "))
+    # for produto in produtos :
+    #     if pesquisa.lower() == produto["categoria"].lower() :
+    #         if pesquisa_categoria == 1 :
+    #             nova_categoria = input("Digite a nova categoria do seu produto: ")
+    #             produto["categoria"] = nova_categoria
+    #             break
 
 
-    pesquisa_preco = int(input("Digite 1 se voce quer mudar o preço do produto e 0 se voce nao quer mudar : "))
-    for produto in produtos :
-        if pesquisa.lower() == produto["preco"].lower() :
-            if pesquisa_preco == 1 :
-                novo_preco = int(input("Digite o novo preço do seu produto: "))
-                produto["preco"] = novo_preco
-                break
+    # pesquisa_preco = int(input("Digite 1 se voce quer mudar o preço do produto e 0 se voce nao quer mudar : "))
+    # for produto in produtos :
+    #     if pesquisa.lower() == produto["preco"].lower() :
+    #         if pesquisa_preco == 1 :
+    #             novo_preco = int(input("Digite o novo preço do seu produto: "))
+    #             produto["preco"] = novo_preco
+    #             break
 
 
-    pesquisa_estoque = int(input(("Digite 1 se voce quer mudar o estoque do produto e 0 se voce nao quer mudar : ")))
-    for produto in produtos :
-        if pesquisa.lower() == produto["estoque"].lower() :
-            if pesquisa_estoque == 1 :
-                novo_estoque = int(input("Digite o novo estoque do seu produto: "))
-                produto["estoque"] = novo_estoque
-                break
+    # pesquisa_estoque = int(input(("Digite 1 se voce quer mudar o estoque do produto e 0 se voce nao quer mudar : ")))
+    # for produto in produtos :
+    #     if pesquisa.lower() == produto["estoque"].lower() :
+    #         if pesquisa_estoque == 1 :
+    #             novo_estoque = int(input("Digite o novo estoque do seu produto: "))
+    #             produto["estoque"] = novo_estoque
+    #             break
 
     
     
